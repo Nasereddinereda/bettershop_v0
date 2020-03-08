@@ -1,0 +1,36 @@
+{
+  "name": "arrouse",
+  "version": "1.0.0",
+  "description": "sale and purchase everything related to the bride",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "axios": "^0.19.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.3",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.2",
+    "pug": "^2.0.4",
+    "sharp": "^0.24.0",
+    "slugify": "^1.3.6",
+    "util": "^0.12.1",
+    "validator": "^12.1.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:js": "parcel watch ./public/js/app.js --out-dir ./public/js --out-file bundle.js",
+    "build:js": "parcel build ./public/js/app.js --out-dir ./public/js --out-file bundle.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

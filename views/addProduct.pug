@@ -1,0 +1,109 @@
+extends base 
+
+block content
+    .flex.flex-col     
+        .flex.justify-center 
+            .text-4xl.cl-dark.mt-8.strong  ADD PRO
+                span.cl-green DUCT 
+        .flex.justify-center     
+            .text-xl.cl-gray.none-line-0 New Product  
+        
+        
+        .flex.justify-center
+            
+            .w-40-lg.w-35pp.mt-16.w-90-mob 
+                
+                //- Step 1 
+                form.flex.flex-col.addProduct#step-1    
+                    label(for="name")  Name: 
+                    if user 
+                        input(type="text" placeholder="Product Name" data-user=`${user._id}` data-user-role=`${user.role}`  )#name 
+                    else 
+                        input(type="text" placeholder="Product Name" )#name
+                    label(for="type") Type: 
+                    select(name="type" )#type
+                        option(value="" ) --Please choose type--
+                        each prod in type_products
+                            option(value=`${prod}`)= `${prod}`
+                    label(for="state") State:
+                    select(name="state" )#state
+                        option(value="" ) --Please choose state--
+                        each state in state_products
+                            option(value=`${state}`)= `${state}`
+                    
+                    input(type="submit" value="Next" )
+ 
+                
+                //- Step 2 
+                form.flex.flex-col.addProduct#step-2.d-none 
+                    label(for="category")  Category : 
+                    select(name="type" data-dress=`${dress_type}` makeup-type=`${makeup_type}` clothes-type=`${clothes_type}` others-type=`${others_type}` )#category 
+
+                    label(for="color")  Color: 
+                    select(name="type" )#color
+                        option(value="SEVERAL COLORS" ) SEVERAL COLORS
+                        option(value="RED" ) RED
+                        option(value="BLUE" ) BLUE
+                        option(value="WHITE" ) WHITE 
+                        option(value="BLACK" ) BLACK
+                        option(value="YELLOW" ) YELLOW
+                        option(value="GREEN" ) GREEN 
+                        option(value="GRAY" ) GRAY
+                        option(value="ORANGE" ) ORANGE 
+                        option(value="BROWN" ) BROWN 
+                        option(value="PURPLE" ) PURPLE 
+                        option(value="GOLD" ) GOLD 
+                        option(value="PINK" ) PINK 
+                    
+                    
+                    #size
+                        label(for="size") Size: 
+                        .flex.justify-between.mt-4  
+                            
+                            .flex 
+                                input( type="checkbox"  value="S")#S 
+                                .h.ml-2.line-1   S
+                            .flex
+                                input( type="checkbox"  value="M")#M 
+                                .h.ml-2.line-1 M
+                            .flex
+                                input( type="checkbox"  value="L")#L 
+                                .h.ml-2.line-1 L
+                            .flex
+                                input( type="checkbox"  value="XL")#XL 
+                                .h.ml-2.line-1 XL
+                            .flex
+                                input( type="checkbox"  value="XXL")#XXL 
+                                .h.ml-2.line-1 XXL
+                            .flex
+                                input( type="checkbox"  value="3XL")#3XL 
+                                .h.ml-2.line-1 3XL
+
+
+                    label(for="desc")  Description: 
+                    textarea(name=""  rows="3"  placeholder="Description" )#desc
+                    label(for="price")  Price:
+                    input(type="number" placeholder="Product Price" )#price
+                    label(for="quantity")  Quantity:
+                    input(type="number" placeholder="Quantity: 1 default " )#quantity
+                    input(type="submit" value="Next")
+                
+                //- Step 3
+                form.flex.flex-col.addProduct#step-3.d-none   
+                    label(for="wilaya")  Wilaya: 
+                    input(type="text" placeholder="Wilaya" )#wilaya
+                    label(for="email")  Email: 
+                    input(type="email" placeholder="Email" )#email
+                    label(for="phone")  Phone:
+                    input(type="number" placeholder="Phone" )#phone
+                    input(type="submit" value="Add Product")
+
+            
+            
+        //- .flex.justify-center#step-4.mt-12.d-none   
+        //-     .flex.flex-col    
+        //-         h1.text-3xl.cl-dark Your Product was adding 
+        //-             span.cl-green  With Success
+        //-         h1.text-xl.cl-grey it will be displayed after the admin confirmation 
+        //-         a(href="http://localhost:3000/product") Go to product 
+                    

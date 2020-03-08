@@ -1,0 +1,37 @@
+.foot.flex.bg-dark.justify-center.py-16.cl-gray
+    .w-90.flex.justify-between.flex-col-mob 
+        .flex.flex-col.w-35p.cl-gray2.w-90-mob 
+            label(for="name") last name :
+            input(type="text" placeholder="name..." )#name.mb-2.bg-gray
+            label(for="email") last name :
+            input(type="email" placeholder="email..." )#email.mb-2.bg-gray
+            label(for="message") Message :
+            textarea(name="message",placeholder="Message.." , cols="40", rows="5").mb-2.bg-gray
+            input(type="submit" value="Send" ).sub
+        .w-15
+        .flex.flex-col.w-20p.d-none-mob 
+            ul 
+                li.my-4
+                    P.cl-gray2 Product : 
+                li.my-4 
+                    a(href="http://localhost:3000/product/Dress") Dresses
+                li.my-4 
+                    a(href="http://localhost:3000/product/MakeUp") MakeUp
+                li.my-4 
+                    a(href="http://localhost:3000/product/Clothes") Clothes
+                li.my-4 
+                    a(href="http://localhost:3000/product/Others") Accessory
+                //- li.my-4 
+                //-     a(href="#") Others
+        .flex.flex-col.w-20p.w-55-mob
+            ul 
+                li.b-bf.my-4.pb-4
+                    P.cl-gray2 Contact : 
+                li.b-bf.my-4.pb-4 
+                    a(href="#") arrouse@hmail.com
+                li.b-bf.my-4.pb-4 
+                    a(href="#") 555-5555-5555
+                li.b-bf.my-4.pb-4 
+                    a(href="#") 555-5555-5555
+.bg-black.flex.justify-center.cl-white.py-6.ft-10-mob
+    p Copyright &copy; 2020 by Bekkal Nasereddine , All Rights Reserved.

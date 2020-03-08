@@ -1,0 +1,27 @@
+extends base 
+
+block content
+    .flex.flex-col     
+        .flex.justify-center 
+            .text-4xl.cl-dark.mt-8.strong  SIGN 
+                span.cl-green IN 
+        .flex.justify-center     
+            .text-xl.cl-gray.none-line-0 Login 
+        
+        
+        .flex.justify-center
+            
+            .w-35p.mt-16.w-80-mob 
+        
+                form.flex.flex-col#signin    
+ 
+                    label(for="email") Email: 
+                    input(type="email" placeholder="Email")#email 
+                    label(for="password") Password: 
+                    input(type="password" placeholder="Password")#password 
+                    input(type="submit" value="Login")
+
+                .flex.justify-center 
+                    .cl-dark.mr-2  don't have an account yet?
+                    .cl-green 
+                        a(href="http://localhost:3000/signup") SIGN UP 

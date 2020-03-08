@@ -1,0 +1,82 @@
+extends base 
+
+block content
+    .flex.flex-col     
+        .flex.justify-center 
+            if user    
+                .text-4xl.cl-dark.mt-8.strong  UPDATE 
+                    span.cl-green ME 
+            else     
+                .text-4xl.cl-dark.mt-8.strong  SIGN 
+                    span.cl-green UP 
+        
+        if user 
+            .flex.justify-center     
+                .text-xl.cl-gray.none-line-0 Changes 
+        else 
+            .flex.justify-center     
+                .text-xl.cl-gray.none-line-0 Register
+        
+        
+        
+        
+        .flex.justify-center 
+            .w-90.br-bottom.flex.justify-center
+                .w-40p.mt-16.mb-16.w-90-mob 
+                    if user 
+                        //- form.flex.flex-col#update(action='/update' method='POST')   
+                        form.flex.flex-col#update
+                            .flex.mb-8     
+                                img(src=`./img/users/${user.image}` style="height:80px; width:80px; border-radius:50%; ").mr-4  
+                                input(type="file" accept='image/*'  name='image')#image
+                            label(for="last_name")  Last Name: 
+                            input(type="text" placeholder="Last Name" value=`${user.last_name}` name="last_name" )#last_name 
+                            label(for="first_name"  ) First Name: 
+                            input(type="text" placeholder="First Name" value=`${user.first_name}` name="first_name" )#first_name 
+                            label(for="username") Username: 
+                            input(type="text" placeholder="Username" value=`${user.username}` name="username" )#username 
+                            label(for="email") Email: 
+                            input(type="email" placeholder="Email" value=`${user.email}` name="email" )#email  
+                            label(for="phone") Phone: 
+                            input(type="text" placeholder="phone" value=`${user.phone}` )#phone
+                            //- input(type="submit" value="Update")
+                            input(type="submit" value="Update")
+                    else    
+                        form.flex.flex-col#signup   
+                            label(for="last_name")  Last Name: 
+                            input(type="text" placeholder="Last Name")#last_name 
+                            label(for="first_name") First Name: 
+                            input(type="text" placeholder="First Name")#first_name 
+                            label(for="username") Username: 
+                            input(type="text" placeholder="Username")#username 
+                            label(for="email") Email: 
+                            input(type="email" placeholder="Email")#email 
+                            label(for="phone") Phone: 
+                            input(type="text" placeholder="Phone")#phone 
+                            label(for="password") Password: 
+                            input(type="password" placeholder="Password")#password 
+                            label(for="confirm_password") Confirm Password: 
+                            input(type="password" placeholder="Confirm Password")#confirm_password  
+                            input(type="submit" value="Register")
+        
+                    if !user 
+                        .flex.justify-center 
+                            .cl-dark.mr-2  you have an account?
+                            .cl-green 
+                                a(href="http://localhost:3000/signin") SIGN IN
+        
+        
+        
+        
+        
+        if user 
+            .flex.justify-center
+                .w-35p.mt-16.w-80-mob 
+                    form.flex.flex-col#updatePsw
+                        label(for="password") Current Password: 
+                        input(type="password" placeholder="Current Password")#upCurPassword 
+                        label(for="password") New Password: 
+                        input(type="password" placeholder="New Password")#upPassword 
+                        label(for="confirm_password") Confirm Password: 
+                        input(type="password" placeholder="Confirm Password")#upConfirm_password  
+                        input(type="submit" value="Update")

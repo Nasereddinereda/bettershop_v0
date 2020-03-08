@@ -1,0 +1,202 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Document
+  link(rel='stylesheet' href='./css/style.css')
+  link(rel='stylesheet' href='./css/mobile.css') 
+  link(rel='stylesheet' href='./css/utils.css') 
+  link(rel='stylesheet' href='https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css')
+  
+body 
+    section#section-1
+        .Showcase
+            .show-content
+                .Navbar.sticky.top-0.flex.row.justify-center.h-16.cl-dark
+                    .w-90.flex.justify-between
+                        strong.Logo.w-50.xl.my-auto.ft-15-mob.w-40p-mob.w-30-lg 
+                            span.cl-green LOGO 
+                            span.cl-dark AROUSSE
+                        ul.d-none-mob.flex.row.w-35p.w-50-lg
+                            li.w-25
+                                a(href='#section-1').active.smt  Home 
+                            li.w-25
+                                a(href='#section-2').smt  About us 
+                            li.w-25
+                                a(href='#wahtis').smt  What is
+                            li.w-25
+                                a(href='#section-3').smt  Contact us 
+                        if user     
+                            .flex.justify-center.w-15.my-auto
+                                i.fas.fa-shopping-cart.cl-grey.ft-10-mob.w-40p-mob   0 items 
+                        else     
+                            a(href="http://localhost:3000/signin").flex.justify-center.w-15.my-auto     
+                                i.far.fa-user.cl-grey.ft-10-mob.w-40p-mob    Login  
+                .flex.justify-center
+                    .w-90.mt-40p.cl-white.ft-10-mob
+                        h1 Lorem ipsum dolor sit amet consectetur
+                        p.w-50.text-justify Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui magnam sed iste illo doloremque et architecto soluta vitae vel voluptate quo, cumque, voluptatum consequatur incidunt, praesentium ducimus eaque magni eius inventore repellendus accusamus porro. Ducimus neque debitis voluptatum non sint!
+                        a(href='#section-3').cnt-us.smt Contact Us
+        .product.flex.justify-center
+            .flex.flex-col-mob.justify-between.w-80.text-xl.cl-white.ft-15-mob.ft-15-lg
+                strong welcome to our site, Do you want to see all of our products ? 
+                a(href='http://localhost:3000/product') Go to Product               
+
+    section#section-2
+        .flex.justify-center.mt-16.mb-16
+            .w-90.flex.justify-between
+                .w-65.w-90-mob
+                    .text-4xl.mb-1.flex.justify-center 
+                        .cl-dark.mr-1 About
+                        .cl-green Us
+                    p.mb-8.text-sm.cl-grey.flex.justify-center  Who we are ?
+                    .text-3xl.ft-15-mob We Are Arrouss.com 
+                    p.cl-grey.ft-10-mob Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus natus placeat quos quidem aliquam! Vitae voluptas molestiae earum aut recusandae.
+                    .flex.justify-between.mb-4.mt-4
+                        .text-xl.cl-dark.ft-15-mob OUR MISSION
+                        .text-xl.cl-green.ft-15-mob OUR ADVANTAGES
+                        .text-xl.cl-dark.ft-15-mob OUR GAURANTESS
+
+                    p.cl-grey.ft-10-mob Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto illum corrupti maxime tempora. Laboriosam, facere. Impedit obcaecati eaque atque ipsum sequi, ad quibusdam quasi sint nam minima. Facilis, accusantium minima.
+                    .text-3xl.mb-1.flex.mt-16.ft-15-mob 
+                        .cl-dark.mr-1 What is the purpose 
+                        .cl-green of this site ? 
+                    p.b-b.pb-2.mb-8.text-sm.cl-grey.ft-10-mob Buying and selling women's clothes and bridal supplies...
+
+                    .flex.justify-between.b-b.pb-16.mb-8.flex-col-mob#wahtis 
+                       .w-40p.cadre.w-90-mob.mb-10-mob
+                            img(src="/img/Home_sell.jpg", alt="").Square-1
+                       .w-55.card-2.w-90-mob
+                            h1.ft-15-mob Buying
+                            p.ft-10-mob Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus natus placeat quos quidem aliquam! Vitae voluptas molestiae earum aut recusandae.
+                            a(href="http://localhost:3000/product") Go to Product 
+                    
+                    .flex.justify-between.pb-16.flex-rev-mob.b-b
+                        .w-55.card-2.w-90-mob
+                            h1.ft-15-mob Selling
+                            p.ft-10-mob Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus natus placeat quos quidem aliquam! Vitae voluptas molestiae earum aut recusandae.
+                            a(href="http://localhost:3000/addproduct") Go Add Product 
+                        .w-40p.cadre.w-90-mob.mb-10-mob
+                            img(src="/img/Home_buy.jpg", alt="").Square-1
+
+                    .flex.justify-between.pt-16.flex-col-mob
+                       .w-40p.cadre.w-90-mob.mb-10-mob
+                            img(src="/img/Home_sell.jpg", alt="").Square-1
+                       .w-55.card-2.w-90-mob
+                            h1.ft-15-mob Market 
+                            p.ft-10-mob Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus natus placeat quos quidem aliquam! Vitae voluptas molestiae earum aut recusandae.
+                            a(href="http://localhost:3000/product-market") Go to Market 
+
+
+                .w-30p.d-none-mob
+                    .flex.row.w-full
+                        input(type="text"  placeholder="Search..." ).w-90#search.w-85-lg
+                        label(for="search").flex.w-10.icon.justify-center.items-center.w-15-lg
+                            i.fas.fa-search
+                    .flex.mt-6.flex-col      
+                        a(href="#").text-card Product   
+                        .card.flex-col
+                            .card-content.flex.row.pb-2  
+                                .cadre.mr-4
+                                    img(src="./img/Home_dress.jpg").Square  
+                                div 
+                                    h1 
+                                       span.cl-green Product:   
+                                       span.cl-dark Dresses  
+                                    a(href="http://localhost:3000/product/Dress").cl-grey.text-md Go to Dresses
+                            .card-content.flex.row.pb-2.pt-2   
+                                .cadre.mr-4
+                                    img(src="./img/Home_makeup.jpg").Square  
+                                div 
+                                    h1 
+                                       span.cl-green Product:   
+                                       span.cl-dark MakeUp  
+                                    a(href="http://localhost:3000/product/MakeUp").cl-grey.text-md Go to MakeUp
+                            .card-content.flex.row.pb-2.pt-2   
+                                .cadre.mr-4
+                                    img(src="./img/Home_clothes.jpg").Square  
+                                div 
+                                    h1 
+                                       span.cl-green Product:   
+                                       span.cl-dark Clothes  
+                                    a(href="http://localhost:3000/product/Clothes").cl-grey.text-md Go to Clothes 
+                            .card-content.flex.row.pb-2.pt-2   
+                                .cadre.mr-4
+                                    img(src="./img/Home_acce.jpg").Square  
+                                div 
+                                    h1 
+                                       span.cl-green Product: 
+                                       span.cl-dark Accessory  
+                                    a(href="http://localhost:3000/product/Others").cl-grey.text-md Go to Accessory
+                            //- .card-content.flex.row.no-border.pt-2   
+                            //-     .cadre.mr-4
+                            //-         img(src="./img/Home_others.jpg").Square  
+                            //-     div 
+                            //-         h1 
+                            //-            span.cl-green Product:   
+                            //-            span.cl-dark Others  
+                            //-         a(href="#").cl-grey.text-md Go to Others
+        .flex.justify-center.mb-16
+            .flex.w-90.justify-between.flex-col-mob 
+                .cadre.w-30p.w-90-mob.mb-10-mob
+                    .flex.flex-col.items-center.p-6
+                        i.fas.fa-truck.fa-3x.mt-8.mb-4.cl-dark
+                        .cl-dark.text-2xl.mb-4.cl-dark fast delivery
+                        p.mb-8.cl-grey Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, atque?
+                .cadre.w-30p.w-90-mob.mb-10-mob 
+                    .flex.flex-col.items-center.p-6
+                        i.fas.fa-credit-card.fa-3x.mt-8.mb-4.cl-green
+                        .text-2xl.mb-4.cl-green buy online
+                        p.mb-8.cl-grey Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, atque?
+                .cadre.w-30p.w-90-mob 
+                    .flex.flex-col.items-center.p-6
+                        i.fas.fa-money-check-alt.fa-3x.mt-8.mb-4.cl-dark
+                        .cl-dark.text-2xl.mb-4.cl-dark sell online
+                        p.mb-8.cl-grey Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, atque?
+        .product.product-footer.flex.row.justify-center
+            .flex.flex-col-mob.justify-between.w-80.text-xl.cl-white.ft-15-mob.ft-15-lg
+                strong Welcome back, what are you waiting for go to  product ? 
+                a(href='http://localhost:3000/product') Go to Product
+
+    section#section-3
+        .foot.flex.bg-dark.justify-center.py-16.cl-gray
+            .w-90.flex.justify-between.flex-col-mob 
+                .flex.flex-col.w-35p.cl-gray2.w-90-mob 
+                    label(for="name") last name :
+                    input(type="text" placeholder="name..." )#name.mb-2.bg-gray
+                    label(for="email") last name :
+                    input(type="email" placeholder="email..." )#email.mb-2.bg-gray
+                    label(for="message") Message :
+                    textarea(name="message",placeholder="Message.." , cols="40", rows="5").mb-2.bg-gray
+                    input(type="submit" value="Send" ).sub
+                .w-15
+                .flex.flex-col.w-20p.d-none-mob 
+                    ul 
+                        li.my-4
+                            P.cl-gray2 Product : 
+                        li.my-4 
+                            a(href="http://localhost:3000/product/Dress") Dresses
+                        li.my-4 
+                            a(href="http://localhost:3000/product/MakeUp") MakeUp
+                        li.my-4 
+                            a(href="http://localhost:3000/product/Clothes") Clothes
+                        li.my-4 
+                            a(href="http://localhost:3000/product/Others") Accessory
+                        //- li.my-4 
+                        //-     a(href="#") Others
+                .flex.flex-col.w-20p.w-55-mob
+                    ul 
+                        li.b-bf.my-4.pb-4
+                            P.cl-gray2 Contact : 
+                        li.b-bf.my-4.pb-4 
+                            a(href="#") arrouse@hmail.com
+                        li.b-bf.my-4.pb-4 
+                            a(href="#") 555-5555-5555
+                        li.b-bf.my-4.pb-4 
+                            a(href="#") 555-5555-5555
+        .bg-black.flex.justify-center.cl-white.py-6.ft-10-mob
+            p Copyright &copy; 2020 by Bekkal Nasereddine , All Rights Reserved.
+script( src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+script(src='./js/smooth.js')

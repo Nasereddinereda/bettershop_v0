@@ -1,0 +1,42 @@
+.header 
+    .nav.flex.justify-center.bg-green.cl-white.h-14 
+        .w-90.flex.justify-between
+            .div.my-auto.d-none-mob 
+                a(href="http://localhost:3000") Better Shop 
+
+            .flex.header-mob     
+
+                if !user 
+                    ul.flex.my-auto.ft-11-mob.ft-14-lg
+                        li 
+                            a(href="http://localhost:3000/product")    HOME   
+                        li 
+                            a(href="http://localhost:3000/product-market")    MARKET   
+                        li 
+                            a(href="http://localhost:3000/signin")    LOG IN   
+                        li 
+                            a(href="http://localhost:3000/signup")   SIGN UP   
+                        li.mob-disp  
+                            a(href="http://localhost:3000/addproduct").bd-white.bd-radius.a-sign.ft-14-lg    Add Product   
+                    
+                else     
+                    
+                    ul.flex.ft-10-mob.ft-14-lg
+                            
+                                
+                        li.flex
+                            img(src=`./img/users/${user.image}` style="width:40px; height:40px; border-radius:50%;").my-auto.d-none-mob  
+                            a(href="http://localhost:3000/me/sale").my-auto= user.username.toUpperCase()
+                            
+                        li.my-auto 
+                            a(href="http://localhost:3000/product")    HOME  
+                        li.my-auto 
+                            a(href="http://localhost:3000/product-market")    MARKET  
+
+                        li.my-auto.mr-4 
+                            a#logout   LOG OUT
+
+                        li.my-auto.mob-disp   
+                            a(href="http://localhost:3000/addproduct").bd-white.bd-radius.a-sign    Add Product
+    
+ 

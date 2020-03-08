@@ -1,0 +1,36 @@
+extends base 
+
+block content
+
+    .flex.flex-col     
+        .flex.justify-center 
+            .text-4xl.cl-dark.mt-8.strong  ADD IM
+                span.cl-green AGES 
+        .flex.justify-center     
+            .text-xl.cl-gray.none-line-0 New Photos
+
+
+    .flex.items-center.flex-col       
+        .flex.flex-col.cl-dark-2.text-lg.mt-12.w-90.cadre.p-2   
+            .text-xl.strong.cl-dark.mb-2  How to insert pictures ?     
+            h1.ml-2 1) click on  
+                span.strong.cl-green  Choose Files  
+                span then go to  photos folder.
+            h1.ml-2 2) 
+                span.cl-gray ctrl 
+                span + 
+                span.cl-gray click 
+                span to select, you have to select 
+                span.cl-green.strong  3 photos
+                span . 
+            h1.ml-2 3) confirm that you have selected 3 photos after clicking on 
+                span.strong.cl-green  open
+                span .
+            h1.ml-2 4) click on 
+                span.strong.cl-green Add Images 
+                span to add the photos to your product and validate it.
+        
+        .w-90.mt-4 
+            form.flex.flex-col#addimgs   
+                input(type="file" accept='image/*'  name='image' multiple)#image
+                input(type="submit" value="Add Images" ).mt-4.max-width.px-8  

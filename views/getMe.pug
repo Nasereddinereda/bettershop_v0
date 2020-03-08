@@ -1,0 +1,105 @@
+extends base 
+
+block content
+   
+   .nav-top.flex.justify-center.items-center
+        .w-90.flex.flex-col.justify-between.h-80
+            .text-3xl.cl-dark Profil 
+            .flex.justify-between 
+                ul.flex.ft-10-mob  
+                    if page === "purchased"
+                        li.mr-6.cat-active.pos-neg 
+                            a(href="http://localhost:3000/me/purchased") Purchased 
+                    else 
+                        li.mr-6.pos-neg 
+                            a(href="http://localhost:3000/me/purchased") Purchased
+                    if page === "sale"
+                        li.mr-6.cat-active.pos-neg 
+                            a(href="http://localhost:3000/me/sale") Sale 
+                    else 
+                        li.mr-6.pos-neg 
+                            a(href="http://localhost:3000/me/sale") Sale
+                    if page === "favorite"
+                        li.mr-6.cat-active.pos-neg 
+                            a(href="http://localhost:3000/me/favorite") Favorite
+                    else 
+                        li.mr-6.pos-neg 
+                            a(href="http://localhost:3000/me/favorite") Favorite
+                   
+                a(href="http://localhost:3000/addproduct").btn-green.ft-9-mob  Go Add Product 
+
+   .flex.justify-center.mt-16.mb-16
+        .w-90.flex.justify-between.flex-col-mob 
+            .w-30p.w-100-mob   
+                .stiky-perso
+                    .flex.flex-col.cadre.pt-8.px-4.items-center.pb-4  
+                        img(src=`./img/users/${user.image}` style="height:100px; width:100px; border-radius:50%; ") 
+                        .text-2xl.cl-dark= `${user.username}`
+                        .text-sm.cl-grey Lorem ipsum dolor sit amet.
+                        a(href="http://localhost:3000/updateme").btn-dark.flex.justify-center.w-full.mt-6
+                           h1  Go Modify Profil 
+
+                        .br-top.flex.flex-col.w-full  
+                            h1.cl-dark-2.mb-4 Hi Mr. 
+                                span= `${user.last_name}.`
+                            .flex.flex-row  
+                                .strong Email: &nbsp; 
+                                h1= user.email  
+                            .flex.flex-row  
+                                .strong Phone: &nbsp; 
+                                h1= user.phone   
+                            - const date = user.date.toLocaleString('en-us', {month: 'long', year: 'numeric'})
+                            .flex.flex-row  
+                                .strong Since: &nbsp; 
+                                h1= date   
+                        
+                        
+                        .br-top.flex.flex-col.w-full  
+                            .flex.flex-row.justify-between  
+                                .strong.cl-dark-2 Purchased &nbsp; 
+                                h1.cl-grey= stateprod 
+                            .flex.flex-row.justify-between   
+                                .strong.cl-dark-2 Sale &nbsp; 
+                                h1.cl-grey= statesell  
+                            .flex.flex-row.justify-between   
+                                .strong.cl-dark-2 Favorite &nbsp;   
+                                h1.cl-grey= statefav  
+
+                            a(href="http://localhost:3000/product").cl-green.mt-2 Go to Product 
+
+
+            .w-65.w-100-mob.mt-4-mob
+                .d-grid.d-grid-col
+
+                    if products 
+                        for prod in products
+                            div 
+                               a(href=`http://localhost:3000/product/${prod.type}/${prod.slug}/${prod._id}`)  
+                                    .cadre 
+                                        div(style=`background: url("./img/products/${prod.images[0]}") no-repeat center center/cover; width:100%; height:250px`).img-card
+                                            .content.flex.flex-col.justify-between
+                                                div 
+                                                    div     
+                                                        .flex.justify-between  
+                                                            div 
+                                                                .cl-green.strong.none-line.mt-3.ml-2= prod.type  
+                                                            div 
+                                                                i.fas.fa-times.fa-lg.cl-white.mt-3.mr-2     
+                                                        dev
+                                                            .cl-grey.ml-2.none-line= prod.state 
+                                            
+                                                div 
+                                                    .flex.justify-center 
+                                                        div 
+                                                            h1.text-lg.strong.cl-green.none-line Modify:  
+                                                            .text-2xl.strong.cl-white=   prod.name  
+                                                div.card-footer.cl-red.strong  XL &nbsp;  LG &nbsp; SM &nbsp; M 
+                                    h1.cl-red.strong= prod.price 
+                                        Span.ml-1 DA 
+                                    h1.cl-grey.line= prod.name 
+                                    .flex.justify-center 
+                                        h1.mt-4 
+                                            a(href="#") Modify   
+                                                i.fas.fa-angle-right.ml-2
+   
+   include _footer 
